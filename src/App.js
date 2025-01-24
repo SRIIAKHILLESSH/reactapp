@@ -42,6 +42,13 @@ function App() {
       <User user={userData} />
     </div>
   );
+
 }
+function App() {
+  const userData = {
+    name: 'Akhil',
+    email: 'akhil@srii.com',
+    age: 25, // Add age to demonstrate dynamic properties
+  };
 
 export default App;
