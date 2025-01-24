@@ -50,5 +50,5 @@ function App() {
     email: 'akhil@srii.com',
     age: 25, // Add age to demonstrate dynamic properties
   };
-
+}
 export default App;
