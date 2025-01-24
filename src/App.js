@@ -1,11 +1,46 @@
-import logo from './logo.svg';
+
+import React from 'react';
 import './App.css';
 
-function App() {
+// Define the Job component
+function Job({ salary, position, company }) {
+  return (
+    <div>
+      <h2>{position}</h2>
+      <p>Salary: {salary}</p>
+      <p>Company: {company}</p>
+    </div>
+  );
+}
+
+// Define the User component
+function User({ user }) {
   return (
     <div className="App">
-      hello world
-     </div>
+      <h1>Welcome {user.name}</h1>
+      <h2>Your email is {user.email}</h2>
+      <h2>Your age is {user.age}</h2>
+    </div>
+  );
+}
+
+// Main App component
+function App() {
+  const userData = {
+    name: 'Akhil',
+    email: 'akhil@srii.com',
+    age: 25, // Add age to demonstrate dynamic properties
+  };
+
+  return (
+    <div className="App">
+      <h1>Job Listings</h1>
+      <Job salary={90000} position="Senior SDE" company="Amazon" />
+      <Job salary={12000} position="Junior SDE" company="Google" />
+      <Job salary={10000} position="Project Manager" company="Netflix" />
+      <hr /> {/* Divider for better layout */}
+      <User user={userData} />
+    </div>
   );
 }
 
