@@ -60,5 +60,48 @@ function App2() {
     </div>
   );
 }
+function checkVotingEligibility(name, age) {
+  const minimumVotingAge = 18; // Minimum age to vote
 
-export default App;
+  if (age >= minimumVotingAge) {
+      return `${name} is eligible to vote.`;
+  } else {
+      return `${name} is not eligible to vote. They need to wait ${minimumVotingAge - age} more year(s).`;
+  }
+}
+
+// Example Usage:
+const memberName = "John Doe";
+const memberAge = 16;
+
+console.log(checkVotingEligibility(memberName, memberAge)); // Output: John Doe is not eligible to vote. They need to wait 2 more year(s).
+
+
+
+
+
+function App3() {
+  const planets = [
+    { name: "Earth", isGasPlanet: false },
+    { name: "Mars", isGasPlanet: false },
+    { name: "Jupiter", isGasPlanet: true },
+    { name: "Venus", isGasPlanet: true },
+    { name: "Neptune", isGasPlanet: true },
+    { name: "Uranus", isGasPlanet: true },
+    { name: "Sun", isGasPlanet: false }
+  ];
+
+  return (
+    <div className="App3">
+      {
+        planets
+          .filter(planet => planet.isGasPlanet) // Filter only gas planets
+          .map((planet, index) => (
+            <h2 key={index}>{planet.name}</h2> // Display their names
+          ))
+      }
+    </div>
+  );
+}
+
+export default App3;
