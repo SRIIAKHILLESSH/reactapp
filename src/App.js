@@ -103,5 +103,40 @@ function App3() {
     </div>
   );
 }
+function IndiaQuiz() {
+  const questions = [
+    {
+      question: "What is the capital of India?",
+      options: ["Mumbai", "New Delhi", "Kolkata", "Chennai"],
+      answer: "New Delhi"
+    },
+    {
+      question: "Who is known as the Father of the Nation in India?",
+      options: ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Bhagat Singh"],
+      answer: "Mahatma Gandhi"
+    },
+    {
+      question: "Which is the national animal of India?",
+      options: ["Lion", "Elephant", "Tiger", "Peacock"],
+      answer: "Tiger"
+    }
+  ];
+
+  return (
+    <div className="IndiaQuiz">
+      <h1>India Quiz</h1>
+      {questions.map((q, index) => (
+        <div key={index}>
+          <h2>{q.question}</h2>
+          <ul>
+            {q.options.map((option, i) => (
+              <li key={i}>{option}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default App3;
