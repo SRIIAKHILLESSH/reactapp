@@ -44,11 +44,21 @@ function App() {
   );
 
 }
-function App() {
+function App1() {
   const userData = {
     name: 'Akhil',
     email: 'akhil@srii.com',
     age: 25, // Add age to demonstrate dynamic properties
   };
 }
+function App2() {
+  const age = 10;
+  const isGreen = true;
+  return (
+    <div className="App2">
+      {age > 10 ? 'Age is greater than 10' : 'Age is 10 or less'}
+    </div>
+  );
+}
+
 export default App;
