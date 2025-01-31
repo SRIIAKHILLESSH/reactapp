@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 // Define the Job component
@@ -79,7 +79,7 @@ console.log(checkVotingEligibility(memberName, memberAge)); // Output: John Doe 
 
 
 
-
+// Define the App3 component
 function App3() {
   const planets = [
     { name: "Earth", isGasPlanet: false },
@@ -138,5 +138,20 @@ function IndiaQuiz() {
     </div>
   );
 }
+function AgeIncrementer() {
+  const [age, setAge] = useState(0);
 
-export default App3;
+  const increaseAge = () => {
+    setAge(age + 1);
+  };
+
+  
+  return (
+    <div className="AgeIncrementer">
+      <h1>Current Age: {age}</h1>
+      <button onClick={increaseAge}>Increase Age</button>
+    </div>
+  );
+}
+
+export default App;
