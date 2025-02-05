@@ -143,16 +143,16 @@ import './NumberIncrementer.css';
 //import './App.css';
 
 function App() {
-  const [taskList, setTaskList,toolslist,task] = useState(["car wash", "dishes", "home work"]);
+  const [taskList, setTaskList] = useState(["car wash", "dishes", "home work"]);
   const [newTask, setNewTask] = useState("");
 
   const addTask = () => {
-    const task = {
-      id:toolslist.length === 0 ? 1 : toolslist[toolslist.length - 1].id + 1,
+    const newTaskObject = {
+      id: taskList.length === 0 ? 1 : taskList[taskList.length - 1].id + 1,
       taskName: newTask,
-    }
-     setTaskList([...taskList, newTask]);
-     setNewTask("");
+    };
+    setTaskList([...taskList, newTaskObject.taskName]);
+    setNewTask("");
   };
 
   const removeTask = (index) => {
