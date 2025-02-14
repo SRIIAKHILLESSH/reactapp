@@ -247,27 +247,34 @@
 
 // export default App;
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { Home } from './home';
-import { Contact } from './Contact';
-import { Menu } from './menu';
-import { Page } from './page';
-import { Navbar } from './navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/home';
+import { Contact } from './pages/contact';
+import { Profile } from './pages/profile';
+import { Page } from './pages/page';
+import Navbar from './pages/navbar';
+import { useState } from 'react';
+import { createContext } from 'react';
 
+export const AppContext = createContext();
 
 function App() {
+  const [userName, setUserName] = useState("Haissam");
+
   return (
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/menu" element={<Menu />}/>
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="*" element= {<Page />} />
-        </Routes>
-      </Router>
-    </div>
+	<div className="App">
+	  <AppContext.Provider value={{ userName, setUserName }}>
+		<Router>
+		  <Navbar />
+		  <Routes>
+			<Route path="/" element={<Home />} />
+			<Route path="/profile" element={<Profile />} />
+			<Route path="/contact" element={<Contact />} />
+			<Route path="*" element={<Page />} />
+		  </Routes>
+		</Router>
+	  </AppContext.Provider>
+	</div>
   );
 }
 
